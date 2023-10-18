@@ -116,11 +116,29 @@
     background-size: cover;
     background-position: center;
     display: flex;
-    gap: 4vw;
+    gap: 2vw;
+
+    @include xxxl-up {
+        grid-area: 4vw;
+    }
 
 
-    .branding {
-        padding: 15vh 0 15vh 3vw;
+    .left_block {
+        padding: 15vh 0 5vh 3vw;
+        @include xxl-up {
+            width: 30vw;
+            padding: 20vh 0 5vh 3vw;
+        }
+        .logo {
+            max-width: 30rem;
+            float: right;
+            @include xxl-up {
+                max-width: 35rem;
+            }
+        }
+        .dropdown {
+
+        }
     }
     .map_wrapper {
         max-width: 35vw;
@@ -130,6 +148,12 @@
         img {
             border: .5rem solid $color__black;
             border-radius: 1rem;
+        }
+
+        map {
+            area {
+                outline: none;
+            }
         }
     }
 }

@@ -2,29 +2,22 @@
     "use strict";
     
     ///============= Leasing Blocs Slider =============\\\
-    var galleryThumbs = new Swiper ('.step7Slider_content', {
-        slidesPerView: 1,
-        loop: 1,
-        autoplay: false,
-        allowTouchMove: false,
-        loopedSlides: 7,
-    });
+    // $(".modal").on('show.bs.modal', function() {
 
-    var sevenStepSlider = new Swiper ('.step7Slider_content_image', {
-        slidesPerView: 1,
-        loop: 1,
-        spaceBetween: 20,
-        allowTouchMove: false,
+
+
+    var galleryThumbSlide = new Swiper ('.galleryThumbslider', {
+        slidesPerView: 2,
+        spaceBetween: 15,
         autoplay: false,
         speed: 1000,
-        loopedSlides: 7,
         breakpoints: {
             768: {
-                slidesPerView: 2,
+                slidesPerView: 4,
             },
             1200: {
-                slidesPerView: 3,
-                spaceBetween: 30,
+                slidesPerView: 6,
+                spaceBetween: 15,
             },
         },
         navigation: {
@@ -33,8 +26,15 @@
         },
         
     });
-    sevenStepSlider.controller.control = galleryThumbs;
-    galleryThumbs.controller.control = sevenStepSlider;
+    var gallerySlide = new Swiper ('.gallerySlider', {
+        slidesPerView: 1,
+        autoplay: false,
+        spaceBetween: 15,
+        thumbs: {
+            swiper: galleryThumbSlide,
+        },
+    });
+// })
 
 
 })(jQuery);
