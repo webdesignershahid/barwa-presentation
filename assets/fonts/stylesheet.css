@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Times New Roman';
+    src: local('Times New Roman Cyr Bold'), local('TimesNRCyrMT-Bold'),
+        url('TimesNRCyrMT-Bold.woff2') format('woff2'),
+        url('TimesNRCyrMT-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Times New Roman';
+    src: local('Times New Roman Cyr'), local('TimesNRCyrMT'),
+        url('TimesNRCyrMT.woff2') format('woff2'),
+        url('TimesNRCyrMT.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
