@@ -1,41 +1,48 @@
 (function ($) {
     "use strict";
-    
-    ///============= Leasing Blocs Slider =============\\\
-    // $(".modal").on('show.bs.modal', function() {
 
+        var myCustomSlider = document.querySelectorAll('.gallerySlider');
+        var myCustomGalleryThumbs = document.querySelectorAll('.galleryThumbslider');
 
+        for (var i = 0; i < myCustomSlider.length; i++) {
 
-    var galleryThumbSlide = new Swiper ('.galleryThumbslider', {
-        slidesPerView: 2,
-        spaceBetween: 15,
-        autoplay: false,
-        speed: 1000,
-        breakpoints: {
-            768: {
-                slidesPerView: 4,
-            },
-            1200: {
-                slidesPerView: 6,
+            myCustomSlider[i].classList.add('gallerySlider-' + i);
+            myCustomGalleryThumbs[i].classList.add('thumbs-class-' + i);
+
+            var galleryThumbs = new Swiper('.thumbs-class-' + i , {
+                slidesPerView: 2,
                 spaceBetween: 15,
-            },
-        },
-        navigation: {
-            nextEl: '.step7Slider_content_image .btn-next',
-            prevEl: '.step7Slider_content_image .btn-prev',
-        },
-        
-    });
-    var gallerySlide = new Swiper ('.gallerySlider', {
-        slidesPerView: 1,
-        autoplay: false,
-        spaceBetween: 15,
-        thumbs: {
-            swiper: galleryThumbSlide,
-        },
-    });
-// })
+                autoplay: false,
+                speed: 1000,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 4,
+                    },
+                    1200: {
+                        slidesPerView: 6,
+                        spaceBetween: 15,
+                    },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-prev',
+                    prevEl: '.swiper-button-next',
+                },
+            });
 
+            var galleryTop = new Swiper('.gallerySlider-' + i, {
+                spaceBetween: 10,
+                thumbs: {
+                    // el: '.thumbs-class',
+                    // slidesPerView: 5,
+                    swiper: galleryThumbs
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            }); 
+
+        }
 
 })(jQuery);
     
