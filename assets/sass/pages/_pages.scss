@@ -124,10 +124,12 @@
 
 
     .left_block {
-        padding: 15vh 0 5vh 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 0 8vh 5vw;
         @include xxl-up {
             width: 30vw;
-            padding: 20vh 0 5vh 3vw;
         }
         .logo {
             max-width: 30rem;
@@ -136,8 +138,35 @@
                 max-width: 35rem;
             }
         }
-        .dropdown {
+        .select_dropdown {
+            display: block;
+            width: 100%;
+            max-width: 35rem;
+            margin: 0 auto;
+            background-color: $color__white;
 
+            label {
+                display: flex;
+                align-items: center;
+                padding: 1.8rem 2.2rem;
+                font-weight: bold;
+                font-size: 1.8rem;
+                .ar {
+                    margin-left: auto;
+                }
+            }
+            .select2-container {
+                width: 100% !important;
+
+                .select2-selection--single {
+                    background-color: #B88343;
+                    border: 0;
+                    border-radius: 0;
+                }
+                .select2-selection__rendered {
+                    color: $color__white;
+                }
+            }
         }
     }
     .map_wrapper {
