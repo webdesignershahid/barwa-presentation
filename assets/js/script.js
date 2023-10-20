@@ -4,7 +4,7 @@
     // Preloader
     $(window).on('DOMContentLoaded', function() {
         if ($('.preloader').length) {
-            $('.preloader').delay(2000).fadeOut(1000);
+            $('.preloader').delay(2500).fadeOut(500);
         }
     });
 
@@ -77,5 +77,10 @@
     $(document).ready(function(e) {
         $('img[usemap]').rwdImageMaps();        
     });
+
+    // Wow js Animation
+    new WOW({
+        mobile:false
+    }).init();
 
 })(jQuery);

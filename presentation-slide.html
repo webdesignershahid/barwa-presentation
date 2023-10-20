@@ -29,18 +29,24 @@
     <!-- All CSS Here
     ================================================== -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/select2.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="circle"></div>
+        <img src="assets/images/barwa-logo.svg" alt="">
+    </div>
+    <!-- Preloader end -->
+
 
     <div class="presentation_wrapper">
-        <div class="left_block">
-
-
-            <div class="select_dropdown">
+        <div class="left_block">          
+            <div class="select_dropdown  wow animate__animated animate__fadeInUp" data-wow-delay="2.5s">
                 <form action="#">
                     <div class="form-group">
                         <label for="selectLocation">
@@ -74,7 +80,7 @@
                 </form>
             </div>
         </div>
-        <div class="map_wrapper">
+        <div class="map_wrapper  wow animate__animated animate__fadeInDown" data-wow-delay="2.5s">
             <img src="assets/images/map.webp"  alt="Barwa Project Map" usemap="#mapLocation">
             <map name="mapLocation" class="img-responsive">
                 <area data-bs-toggle="modal" 
@@ -183,6 +189,16 @@
                     shape="rect"
                 >
             </map>
+        </div>
+        <div class="middle-align">
+            <div class="logo  wow animate__animated animate__fadeIn" data-wow-delay="2.5s">
+                <a href="about.html">
+                    <img src="assets/images/barwa-logo.svg" alt="Barwa">
+                </a>
+            </div>
+            <div class="shape">
+                <img src="assets/images/dots.svg" class="animate-floatX" alt="">
+            </div>
         </div>
     </div>
 
@@ -1658,7 +1674,7 @@
     <script src="assets/js/jquery.rwdImageMaps.js"></script>
     <script src="assets/js/select2.full.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/script.js"></script>
-
 </body>
 </html>

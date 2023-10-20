@@ -119,10 +119,8 @@
     gap: 2vw;
 
     @include xxxl-up {
-        grid-area: 4vw;
+        gap: 3vw;
     }
-
-
     .left_block {
         display: flex;
         flex-direction: column;
@@ -133,7 +131,8 @@
         }
         .logo {
             max-width: 30rem;
-            float: right;
+            width: 30rem;
+            margin: 0 auto;
             @include xxl-up {
                 max-width: 35rem;
             }
@@ -182,6 +181,8 @@
         max-width: 35vw;
         display: flex;
         align-items: center;
+        position: relative;
+        z-index: 1;
 
         img {
             border: .5rem solid $color__black;
@@ -191,6 +192,32 @@
         map {
             area {
                 outline: none;
+            }
+        }
+    }
+    .middle-align  {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4.5vw 0 5vw;
+
+        .logo {
+            margin-left: 5rem;
+            img {
+                width: 30rem;
+            }
+        }
+        .shape {
+            position: relative;
+            z-index: -1;
+            img {
+                width: 40rem;
+                animation: floatX 5s ease-in-out infinite;
             }
         }
     }
@@ -224,6 +251,42 @@
                 font-size: 1.4rem;
                 margin-top: .2rem;
             }
+        }
+    }
+}
+
+.about {
+    overflow: hidden;
+    padding: 5rem 0 2rem 5rem;
+
+    .about-content {
+        .widget {
+            & + .widget {
+                margin-top: 1rem;
+            }
+        }
+        .title {
+            color: #B88343;
+            font-weight: bold;
+            margin-bottom: .2rem;
+        }
+        p {
+            line-height: 1.2;
+            color: #006F9B;
+            
+            @include xxxl-up {
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .page-footer {
+        text-align: end;
+    }
+
+    .logo {
+        img {
+            width: 25rem;
+            margin: 0 auto;
         }
     }
 }

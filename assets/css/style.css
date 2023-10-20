@@ -258,6 +258,17 @@ textarea.form-control:focus {
   display: block;
 }
 
+@keyframes floatX {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 .modal {
   --bs-modal-width: 98%;
 }
@@ -625,7 +636,7 @@ textarea.form-control:focus {
 }
 @media screen and (min-width: 1900px) {
   .presentation_wrapper {
-    grid-area: 4vw;
+    gap: 3vw;
   }
 }
 .presentation_wrapper .left_block {
@@ -641,7 +652,8 @@ textarea.form-control:focus {
 }
 .presentation_wrapper .left_block .logo {
   max-width: 30rem;
-  float: right;
+  width: 30rem;
+  margin: 0 auto;
 }
 @media screen and (min-width: 1400px) {
   .presentation_wrapper .left_block .logo {
@@ -689,6 +701,8 @@ textarea.form-control:focus {
   max-width: 35vw;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 .presentation_wrapper .map_wrapper img {
   border: 0.5rem solid #000000;
@@ -696,6 +710,31 @@ textarea.form-control:focus {
 }
 .presentation_wrapper .map_wrapper map area {
   outline: none;
+}
+.presentation_wrapper .middle-align {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4.5vw 0 5vw;
+}
+.presentation_wrapper .middle-align .logo {
+  margin-left: 5rem;
+}
+.presentation_wrapper .middle-align .logo img {
+  width: 30rem;
+}
+.presentation_wrapper .middle-align .shape {
+  position: relative;
+  z-index: -1;
+}
+.presentation_wrapper .middle-align .shape img {
+  width: 40rem;
+  animation: floatX 5s ease-in-out infinite;
 }
 
 .select2-dropdown {
@@ -723,6 +762,35 @@ textarea.form-control:focus {
 .select2-dropdown li div + div {
   font-size: 1.4rem;
   margin-top: 0.2rem;
+}
+
+.about {
+  overflow: hidden;
+  padding: 5rem 0 2rem 5rem;
+}
+.about .about-content .widget + .widget {
+  margin-top: 1rem;
+}
+.about .about-content .title {
+  color: #B88343;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+.about .about-content p {
+  line-height: 1.2;
+  color: #006F9B;
+}
+@media screen and (min-width: 1900px) {
+  .about .about-content p {
+    font-size: 1.6rem;
+  }
+}
+.about .page-footer {
+  text-align: end;
+}
+.about .logo img {
+  width: 25rem;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
