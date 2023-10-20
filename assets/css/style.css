@@ -294,7 +294,7 @@ textarea.form-control:focus {
 }
 .modal .modal-content {
   border: 0;
-  background: url(../images/modal-bg.png);
+  background: linear-gradient(90deg, rgb(0, 111, 155) 0%, rgb(0, 111, 155) 60%, rgb(255, 255, 255) 100%);
   background-size: cover;
   background-position: center;
 }

@@ -34,16 +34,12 @@
     }
     .modal-content {
         border: 0;
-        // background: linear-gradient(90deg, rgba(0,111,155,1) 0%, rgba(0,111,155,1) 52%, rgba(255,255,255,1) 100%);
-        background: url(../images/modal-bg.png);
+        background: linear-gradient(90deg, rgba(0,111,155,1) 0%, rgba(0,111,155,1) 60%, rgba(255,255,255,1) 100%);
         background-size: cover;
         background-position: center;
     }
 
     .project-details {
-        // display: grid;
-        // grid-template-columns: repeat(2, minmax(0, 1fr));
-        // gap: 4rem;
         padding: 0 4rem 4rem 6rem;
     }
     .project-info {
