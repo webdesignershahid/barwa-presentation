@@ -643,7 +643,7 @@ textarea.form-control:focus {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 0 8vh 5vw;
+  padding: 0 0 10vh 5vw;
 }
 @media screen and (min-width: 1400px) {
   .presentation_wrapper .left_block {
@@ -735,6 +735,11 @@ textarea.form-control:focus {
 .presentation_wrapper .middle-align .shape img {
   width: 40rem;
   animation: floatX 5s ease-in-out infinite;
+}
+.presentation_wrapper .back-to-home {
+  position: absolute;
+  right: 8rem;
+  top: 8rem;
 }
 
 .select2-dropdown {
