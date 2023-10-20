@@ -1,6 +1,14 @@
 (function ($) {
     "use strict";
 
+    // Preloader
+    $(window).on('DOMContentLoaded', function() {
+        if ($('.preloader').length) {
+            $('.preloader').delay(2000).fadeOut(1000);
+        }
+    });
+
+    // Modal Gallery Slider with thumbnail
     var myCustomSlider = document.querySelectorAll('.gallerySlider');
     var myCustomGalleryThumbs = document.querySelectorAll('.galleryThumbslider');
 
@@ -32,8 +40,6 @@
         var galleryTop = new Swiper('.gallerySlider-' + i, {
             spaceBetween: 10,
             thumbs: {
-                // el: '.thumbs-class',
-                // slidesPerView: 5,
                 swiper: galleryThumbs
             },
             navigation: {
@@ -45,23 +51,29 @@
     }
 
 
-    // function formatDesign(state) {
-    //     var selectionText = state.text.split(".");
-    //     var state = selectionText[0] + "</br>" + selectionText[1];      
-    //     return state;
-    // }
+    // Select2 list formate with line break for en and ar
+    function formatDesign(item) {
+        var selectionText = item.text.split(".");
+        var $item = $(
+            '<div>' + selectionText[0] + '</div>' + '<div>' + selectionText[1] + '</div>'
+        );
+        return $item;
+    }
 
-    $('#selectLocation').select2({
-        minimumResultsForSearch: Infinity,
-        // formatSelection: formatDesign,
-        // templateResult: formatDesign,
-        
+    // Initialize select2
+    $('.select2').select2({
+        minimumResultsForSearch: Infinity, // disable search box
+        templateResult: formatDesign,
+        templateSelection: formatDesign,        
     });
-    $('#selectLocation').change(function() {
+
+    // show modal of the value from select option
+    $('.select2').change(function() {
         var selectedOption = $(this).val();
         $('#modal' + selectedOption).modal('show');
     });
 
+    // Location mapping image responsive
     $(document).ready(function(e) {
         $('img[usemap]').rwdImageMaps();        
     });

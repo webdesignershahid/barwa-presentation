@@ -402,6 +402,44 @@ textarea.form-control:focus {
   border-color: #fff;
 }
 
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1099;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preloader img {
+  width: 15rem;
+}
+.preloader .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 20rem;
+}
+.preloader .circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 0.5rem solid #f3f3f3;
+  border-top: 0.5rem solid #006F9B;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*--------------------------------------------------------------
     [ ## Container ]
 --------------------------------------------------------------*/
@@ -613,6 +651,7 @@ textarea.form-control:focus {
 .presentation_wrapper .left_block .select_dropdown {
   display: block;
   width: 100%;
+  min-width: 35rem;
   max-width: 35rem;
   margin: 0 auto;
   background-color: #FFFFFF;
@@ -620,7 +659,7 @@ textarea.form-control:focus {
 .presentation_wrapper .left_block .select_dropdown label {
   display: flex;
   align-items: center;
-  padding: 1.8rem 2.2rem;
+  padding: 1.8rem 2.2rem 1.5rem;
   font-weight: bold;
   font-size: 1.8rem;
 }
@@ -634,9 +673,13 @@ textarea.form-control:focus {
   background-color: #B88343;
   border: 0;
   border-radius: 0;
+  height: 6rem;
 }
 .presentation_wrapper .left_block .select_dropdown .select2-container .select2-selection__rendered {
   color: #FFFFFF;
+  padding: 1rem 2.2rem;
+  font-size: 1.3rem;
+  text-align: center;
 }
 .presentation_wrapper .map_wrapper {
   max-width: 35vw;
@@ -649,6 +692,27 @@ textarea.form-control:focus {
 }
 .presentation_wrapper .map_wrapper map area {
   outline: none;
+}
+
+.select2-dropdown {
+  background-color: #B88343;
+}
+.select2-dropdown ul {
+  max-height: 50rem !important;
+}
+.select2-dropdown li {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+  padding: 1.5rem 2.2rem 1rem;
+  transition: all 0.2s ease;
+}
+.select2-dropdown li.select2-results__option--selected, .select2-dropdown li.select2-results__option--highlighted, .select2-dropdown li.select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #000;
+}
+.select2-dropdown li div + div {
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
