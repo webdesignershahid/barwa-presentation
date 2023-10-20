@@ -680,6 +680,10 @@ textarea.form-control:focus {
   padding: 1rem 2.2rem;
   font-size: 1.3rem;
   text-align: center;
+  line-height: inherit;
+}
+.presentation_wrapper .left_block .select_dropdown .select2-container .select2-selection__arrow {
+  display: none;
 }
 .presentation_wrapper .map_wrapper {
   max-width: 35vw;
@@ -699,6 +703,12 @@ textarea.form-control:focus {
 }
 .select2-dropdown ul {
   max-height: 50rem !important;
+  padding-right: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.select2-dropdown ul::-webkit-scrollbar {
+  display: none;
 }
 .select2-dropdown li {
   font-size: 1.2rem;

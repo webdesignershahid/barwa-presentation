@@ -53,7 +53,7 @@
 
     // Select2 list formate with line break for en and ar
     function formatDesign(item) {
-        var selectionText = item.text.split(".");
+        var selectionText = item.text.split("*");
         var $item = $(
             '<div>' + selectionText[0] + '</div>' + '<div>' + selectionText[1] + '</div>'
         );
