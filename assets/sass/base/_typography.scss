@@ -3,18 +3,11 @@ html {
 	-webkit-text-size-adjust: 100%;
 	font-family: 'Times New Roman';
 	
-	@include md-up {
+	@include lg-up {
 		font-size: 60%;
-	}
-	
-	@include lg-up {
+	}	
+	@include xl-up {
 		font-size: 62.5%;
-	}
-	@include lg-up {
-		font-size: 62.5%;
-	}
-	@include xxxl-up {
-		font-size: 75%;
 	}
 }
 body {

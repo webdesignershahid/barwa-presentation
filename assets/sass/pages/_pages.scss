@@ -18,8 +18,8 @@
         @include minwidth(4000px) {
             padding-top: 12rem;
         }
-        @include minwidth(6000px) {
-            padding-top: 18rem;
+        @include minwidth(5000px) {
+            padding-top: 20rem;
         }
         .site__logo {
             position: absolute;
@@ -119,31 +119,93 @@
     gap: 2vw;
 
     @include xxxl-up {
-        grid-area: 4vw;
+        gap: 3vw;
     }
-
-
     .left_block {
-        padding: 15vh 0 5vh 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 0 10vh 5vw;
         @include xxl-up {
             width: 30vw;
-            padding: 20vh 0 5vh 3vw;
+        }
+        @include minwidth(3800px) {
+            padding: 0 0 10vh 10vw;
         }
         .logo {
             max-width: 30rem;
-            float: right;
+            width: 30rem;
+            margin: 0 auto;
             @include xxl-up {
                 max-width: 35rem;
             }
         }
-        .dropdown {
+        .select_dropdown {
+            display: block;
+            width: 100%;
+            min-width: 35rem;
+            max-width: 35rem;
+            margin: 0 auto;
+            background-color: $color__white;
 
+            @include minwidth(3800px) {
+                min-width: 50rem;
+                max-width: 50rem;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                padding: 1.8rem 2.2rem 1.5rem;
+                font-weight: bold;
+                font-size: 1.8rem;
+                @include minwidth(3800px) {
+                    font-size: 2.4rem;
+                }
+                .ar {
+                    margin-left: auto;
+                }
+            }
+            .select2-container {
+                width: 100% !important;
+
+                .select2-selection--single {
+                    background-color: #B88343;
+                    border: 0;
+                    border-radius: 0;
+                    height: 6rem;
+
+                    @include minwidth(3800px) {
+                        height: 8rem;
+                    }
+                }
+                .select2-selection__rendered {
+                    color: $color__white;
+                    padding: 1rem 2.2rem;
+                    font-size: 1.3rem;
+                    text-align: center;
+                    line-height: inherit;
+
+                    @include minwidth(3800px) { 
+                        font-size: 2rem;
+                    }
+                }
+                .select2-selection__arrow {
+                    display: none;
+                }
+            }
         }
     }
     .map_wrapper {
         max-width: 35vw;
         display: flex;
         align-items: center;
+        position: relative;
+        z-index: 1;
+
+        @include minwidth(3800px) {
+            max-width: 40vw;
+        }
 
         img {
             border: .5rem solid $color__black;
@@ -153,6 +215,178 @@
         map {
             area {
                 outline: none;
+            }
+        }
+    }
+    .middle-align  {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4.5vw 0 5vw;
+
+        @include minwidth(3800px) {
+            padding: 0 8vw 0 8vw;
+        }
+
+        .logo {
+            text-align: center;
+            width: 25vw;
+            img {
+                width: 30rem;
+                @include minwidth(3800px) {
+                    width: auto;
+                }
+            }
+            p {
+                color: #0064A5;
+                font-size: 2rem;
+
+                @include minwidth(3800px) {
+                    font-size: 3rem;
+                }
+            }
+        }
+        .shape {
+            position: relative;
+            z-index: -1;
+            img {
+                width: 40rem;
+                animation: floatX 5s ease-in-out infinite;
+
+                @include minwidth(3800px) {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .back-to-home {
+        position: absolute;
+        left: 8rem;
+        top: 8rem;
+
+        @include minwidth(2500px) {
+            left: 15rem;
+            top: 15rem;
+        }
+    }
+}
+.select2-dropdown {
+    background-color: #B88343;
+    ul {
+        max-height: 50rem !important;
+        padding-right: 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        @include minwidth(3800px) {
+            max-height: 100rem !important;
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    li {
+        font-size: 1.2rem;
+        text-align: center;
+        color: #fff;
+        padding: 1.5rem 2.2rem 1rem;
+        transition: all .2s ease;
+        &.select2-results__option--selected, 
+        &.select2-results__option--highlighted,
+        &.select2-results__option--highlighted.select2-results__option--selectable {
+            background-color: #000;
+        }
+        @include minwidth(3800px) { 
+            font-size: 2rem;
+        }
+
+
+        div {
+            & + div {
+                font-size: 1.4rem;
+                margin-top: .2rem;
+
+                @include minwidth(3800px) {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+.about {
+    overflow: hidden;
+    padding: 5vw 0 1vw 5vw;
+    position: relative;
+
+    .back-to-home {
+        position: absolute;
+        left: 1vw;
+
+        svg {
+            width: 5rem;
+            @include minwidth(3800px) {
+                width: 8rem;
+            }
+        }
+    }
+    .about-content {
+        .widget {
+            & + .widget {
+                margin-top: 1rem;
+                @include minwidth(3800px) {
+                    margin-top: 3rem;
+                }
+            }
+        }
+        .title {
+            color: #B88343;
+            font-weight: bold;
+            margin-bottom: .2rem;
+            font-size: 1.6rem;
+            @include minwidth(2500px) {
+                font-size: 2.8rem;
+            }
+            @include minwidth(3800px) {
+                font-size: 4.8rem;
+            }
+        }
+        p {
+            line-height: 1.4;
+            color: #006F9B;
+            
+            @include xxxl-up {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+            @media (min-width: 2500px) {
+                font-size: 2.4rem;
+            }
+            @include minwidth(3800px) {
+                font-size: 4.3rem;
+            }
+        }
+    }
+    .page-footer {
+        text-align: end;
+        img {
+            width: 100%;
+        }
+    }
+
+    .logo {
+        img {
+            width: 25rem;
+            margin: 0 auto;
+
+            @include minwidth(3800px) {
+                width: auto;
             }
         }
     }
