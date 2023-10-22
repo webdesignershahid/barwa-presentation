@@ -120,8 +120,13 @@
 
     @include xxxl-up {
         gap: 3vw;
+        gap: 3vw;
     }
     .left_block {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 0 10vh 5vw;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -134,6 +139,8 @@
         }
         .logo {
             max-width: 30rem;
+            width: 30rem;
+            margin: 0 auto;
             width: 30rem;
             margin: 0 auto;
             @include xxl-up {
